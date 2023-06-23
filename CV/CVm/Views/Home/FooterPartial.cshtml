@@ -1,0 +1,35 @@
+﻿@model List<CV.Models.Ikonlar>
+<footer class="pt-4 pb-4 text-muted text-center d-print-none">
+    <div class="container">
+        <div class="my-3">
+            <div class="h4">@ViewBag.dgr.Ad</div>
+            <div class="footer-nav">
+                <nav role="navigation">
+                    <ul class="nav justify-content-center">
+                        @foreach (var x in Model)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="@x.Baglanti" title="@x.Ad"><i class="@x.Font"></i><span class="menu-title sr-only">@x.Ad</span></a>
+                            </li>
+                        }
+
+
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="text-small">
+            <div class="mb-1">&copy; Özgeçmiş. Tüm hakları saklıdır.</div>
+            <div>Design - <a href="https://templateflip.com/" target="_blank">TemplateFlip</a></div>
+        </div>
+    </div>
+</footer>
+
+<script src="~/resume/scripts/mdb.min.js?ver=1.2.1"></script>
+<script src="~/resume/scripts/aos.js?ver=1.2.1"></script>
+<script src="~/resume/scripts/main.js?ver=1.2.1"></script>
+
+</body>
+</html>
+
