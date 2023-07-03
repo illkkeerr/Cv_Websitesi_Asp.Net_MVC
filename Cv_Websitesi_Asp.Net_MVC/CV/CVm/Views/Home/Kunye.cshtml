@@ -1,0 +1,35 @@
+﻿@{
+    List<CV.Models.Ikonlar> ikonlar = ViewBag.dgr;
+}
+@model CV.Models.Kisi
+<div class="shadow-1-strong bg-white my-5" id="intro">
+    <div class="bg-info text-white">
+        <div class="cover bg-image">
+            <img src="~/Cv_ArkaResim/arkaResim.jpg" />
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);backdrop-filter: blur(2px);">
+                <div class="text-center p-5">
+                    <div class="avatar p-1"><img class="img-thumbnail shadow-2-strong" src="~/Cv_Foto/@Model.Resim" width="160" height="160" /></div>
+                    <div class="header-bio mt-3">
+                        <div data-aos="zoom-in" data-aos-delay="0">
+                            <h2 class="h1">@Model.Ad</h2>
+                            <p>@Model.Meslek</p>
+                        </div>
+                        <div class="header-social mb-3 d-print-none" data-aos="zoom-in" data-aos-delay="200">
+                            <nav role="navigation">
+                                <ul class="nav justify-content-center">
+                                    @foreach (var x in ikonlar)
+                                    {
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="@x.Baglanti" title="@x.Ad"><i class="@x.Font"></i><span class="menu-title sr-only">@x.Ad</span></a>
+                                        </li>
+                                    }
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="d-print-none"><a class="btn btn-outline-light btn-lg shadow-sm mt-1 me-3" href="~/Cv_Pdf/cv.pdf" data-aos="fade-right" data-aos-delay="700">Cv İndir </a><a class="btn btn-info btn-lg shadow-sm mt-1" href="#contact" data-aos="fade-left" data-aos-delay="700">İletişim</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
